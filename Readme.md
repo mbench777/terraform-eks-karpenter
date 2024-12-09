@@ -1,5 +1,8 @@
 # EKS-KARPENTER
 
+Configuration in this directory creates an AWS EKS cluster with Karpenter provisioned for managing compute resource scaling. In the example provided, Karpenter is provisioned on top of an EKS Managed Node Group.
+
+
 ## Setting Up Terraform with S3 Backend and DynamoDB Locking
 
 ### Prerequisites
@@ -34,7 +37,7 @@ Enabling versioning on your S3 bucket ensures that you have a history of your Te
   aws s3api put-bucket-versioning --bucket <your-terraform-state-bucket> --versioning-configuration Status=Enabled --profile <your-profile-name>
   ```
 
-### Step3 ~> Enable SSE encryption
+### Step3 ~> Optional : Enable SSE encryption
 For added security, you should enable server-side encryption for your S3 bucket:
 
   ```shell
